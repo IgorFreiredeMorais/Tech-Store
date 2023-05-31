@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from app_tech_store import views
+from django.contrib import admin
 
 urlpatterns = [
     path('', views.home, name="home"),
@@ -13,6 +14,11 @@ urlpatterns = [
     path('admin/client/add-client', views.admin_add_client, name='add_clients'),
     path('admin/client/clients', views.admin_list_clients, name='list_clients'),
     path('admin/client/update_client/<int:id>', views.update_client, name='update-client'),
-    path('admin/delete_client/<int:id>', views.delete_client, name='delete-client')
+    path('admin/delete_client/<int:id>', views.delete_client, name='delete-client'),
+    path('admin/',admin.site.urls),
+
+    #urls de users
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
 

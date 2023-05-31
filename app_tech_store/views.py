@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Client
 from django.shortcuts import redirect
 from .forms import ProductForm, ClientForm
-from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 def home(request): 
     return render(request, 'home.html')
 
 ## vies do produto
-
+@login_required
 def admin_add_products(request):
     if request.method == 'POST':
         form = ProductForm(request.POST)
@@ -17,7 +18,8 @@ def admin_add_products(request):
     else:
         form = ProductForm()
         return render(request, 'admin/product/addProduct.html', {'form': form})
-
+    
+@login_required
 def update_product(request, id):
     product = Product.objects.get(pk=id)
     form = ProductForm(request.POST or None, instance=product )
@@ -27,13 +29,14 @@ def update_product(request, id):
 
 
     return render(request, 'admin/product/updateProduct.html', {'product':product, 'form':form})
-
+@login_required
 def delete_product(request, id):
     product = Product.objects.get(pk=id)
     product.delete()
 
     return redirect('list_products')
 
+@login_required
 def admin_list_products(request):
     products =  Product.objects.all()
 
@@ -41,7 +44,7 @@ def admin_list_products(request):
 
 
 # views do cliente
-
+@login_required
 def admin_add_client(request):
     if request.method == 'POST':
         form = ClientForm(request.POST)
@@ -51,7 +54,8 @@ def admin_add_client(request):
     else:
         form = ClientForm()
         return render(request, 'admin/client/addClient.html', {'form': form})
-
+    
+@login_required
 def update_client(request, id):
     client = Client.objects.get(pk=id)
     form = ClientForm(request.POST or None, instance=client )
@@ -62,12 +66,14 @@ def update_client(request, id):
 
     return render(request, 'admin/client/updateClient.html', {'client':client, 'form':form})
 
+@login_required
 def delete_client(request, id):
     client = Client.objects.get(pk=id)
     client.delete()
 
     return redirect('list_clients')
 
+@login_required
 def admin_list_clients(request):
     clients =  Client.objects.all()
 
