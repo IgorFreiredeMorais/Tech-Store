@@ -44,15 +44,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/table.html">Produtos</a>
+              <a class="nav-link" href="/">Produtos</a>
             </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link"
-                href="#"
+                href="/"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -60,6 +60,17 @@
                 Carrinho
               </a>
             </li>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/logout">Logout</a>
+            </li>
+
+            {%else%}
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/login">Entrar</a>
+            </li>
+            {% endif %}
           </ul>
           <form class="d-flex" role="search">
             <input
