@@ -1,0 +1,44 @@
+{% extends '../../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/updateClient.css' %}" />
+<h1 class="title">Update Client {{client.id_client}}</h1>
+<form action="" method="POST">
+  {%csrf_token%}
+
+  <div class="container">
+    <h1>Client Update</h1>
+    <div>
+      <div class="input-box">
+        <label for="name">Name</label>
+        <input type="text" value="{{client.name}}" name="name" id="name" />
+      </div>
+      <div class="input-box">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          value="{{client.address}}"
+          name="address"
+          id="address"
+        />
+      </div>
+      <div class="input-box">
+        <label for="telephone">Telephone</label>
+        <input
+          type="text"
+          value="{{client.telephone}}"
+          name="telephone"
+          id="telephone"
+        />
+      </div>
+      <div class="input-box">
+        <label for="email">Email</label>
+        <input type="text" value="{{client.email}}" name="email" id="email" />
+      </div>
+      <div class="flex">
+        <button class="form-control-sm" style="margin-top: 10px" type="submit">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</form>

@@ -1,0 +1,52 @@
+{% extends '../../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/clients.css' %}" />
+<div class="container">
+  <h1
+    style="
+      display: flex;
+      justify-content: center;
+      margin-top: 1vh;
+      margin-bottom: 2vh;
+    "
+  >
+    List Clients
+  </h1>
+  <div class="scrollable">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Telephone</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      {% for client in clients %}
+      <tr>
+        <td>{{client.id_client}}</td>
+        <td>{{client.name}}</td>
+        <td>{{client.adress}}</td>
+        <td>{{client.telephone}}</td>
+        <td>{{client.email}}</td>
+        <td>
+          <a
+            href="{% url 'update-client' client.id_client %}"
+            style="text-decoration: none"
+          >
+            <span style="margin-right: 8px; margin-left: 8px"
+              ><i class="fas fa-edit" style="color: rgb(0, 255, 0)"></i
+            ></span>
+          </a>
+          <a
+            href="{% url 'delete-client' client.id_client %}"
+            style="text-decoration: none"
+          >
+            <span><i class="fas fa-trash icon" style="color: red"></i></span>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

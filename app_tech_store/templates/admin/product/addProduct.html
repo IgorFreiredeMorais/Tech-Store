@@ -1,0 +1,61 @@
+{% extends '../../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/cadastroProdutosStyle.css' %}" />
+<form method="post">
+  {% csrf_token %}
+  <div class="container">
+    <h1>Product Registration</h1>
+    <div>
+      <div class="input-box">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter product name"
+        />
+      </div>
+      <div class="input-box">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          placeholder="Enter the product description"
+        />
+      </div>
+      <div class="input-box">
+        <label for="price">Price</label>
+        <input
+          type="text"
+          id="price"
+          name="price"
+          placeholder="Enter the product price"
+        />
+      </div>
+      <div class="input-box">
+        <label for="category">Category</label>
+        <input
+          type="text"
+          id="category"
+          name="category"
+          placeholder="Enter the category product"
+        />
+      </div>
+      <div class="input-box">
+        <label for="quantity">Quantity in stock</label>
+        <input
+          type="text"
+          id="quantity"
+          name="quantity"
+          placeholder="Enter the quantity in stock the product"
+        />
+      </div>
+      <div class="flex">
+        <button class="form-control-sm" style="margin-top: 10px" type="submit">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

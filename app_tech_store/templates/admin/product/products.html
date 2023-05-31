@@ -1,0 +1,55 @@
+{% extends '../../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}" />
+<div class="container">
+  <h1
+    style="
+      display: flex;
+      justify-content: center;
+      margin-top: 1vh;
+      margin-bottom: 2vh;
+    "
+  >
+    List Products
+  </h1>
+  <div class="scrollable">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Quantity in Stock</th>
+        <th>Actions</th>
+      </tr>
+      {% for product in products %}
+      <tr>
+        <td>{{product.id_product}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.quantity}}</td>
+        <td>
+          <a
+            href="{% url 'update-product' product.id_product %}"
+            style="text-decoration: none"
+          >
+            <span style="margin-right: 8px; margin-left: 8px"
+              ><i class="fas fa-edit" style="color: rgb(0, 255, 0)"></i
+            ></span>
+          </a>
+
+          <a
+            href="{% url 'delete-product' product.id_product %}"
+            style="text-decoration: none"
+          >
+            <span><i class="fas fa-trash icon" style="color: red"></i></span>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}
