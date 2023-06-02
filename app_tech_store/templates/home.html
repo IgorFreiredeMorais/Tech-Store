@@ -51,7 +51,7 @@
     </div>
   </section>
 
-  <section class="product">
+  {% comment %} <section class="product">
     <div class="container py-5">
       <div class="row py-5">
         <div class="col-lg-5 m-auto text-center">
@@ -119,9 +119,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> {% endcomment %}
 
-  <section class="about">
+  {% comment %} <section class="about">
     <div class="container py-5">
       <div class="row py-5">
         <div class="col-lg-8 m-auto text-center">
@@ -173,7 +173,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> {% endcomment %}
 
   <section class="shop">
     <div class="container">
@@ -184,6 +184,7 @@
         </div>
       </div>
       <div class="row">
+        {% for product in products %}
         <div class="col-lg-3 text-center">
           <div class="card border-0 bg-light mb-2">
             <div class="card-body">
@@ -194,157 +195,10 @@
               />
             </div>
           </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
+          <h6>{{product.name}}</h6>
+          <p>{{product.price}}</p>
         </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-        <div class="col-lg-3 text-center">
-          <div class="card border-0 bg-light mb-2">
-            <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-          <h6>Energy Food</h6>
-          <p>R$39.99</p>
-        </div>
-      </div>
+        {% endfor %}
     </div>
   </section>
 
