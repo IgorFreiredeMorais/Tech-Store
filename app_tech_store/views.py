@@ -5,7 +5,16 @@ from .forms import ProductForm, ClientForm
 from django.contrib.auth.decorators import login_required
 
 def home(request): 
-    return render(request, 'home.html')
+    search = request.GET.get('search')
+    
+    if search:
+        
+        products = Product.objects.filter(name__icontains=search)
+    
+    else :
+        products =  Product.objects.all()
+        
+    return render(request, 'home.html', {'products':products})
 
 ## vies do produto
 @login_required
