@@ -1,5 +1,5 @@
 {% extends '../../base.html' %} {% block conteudo %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/updateClient.css' %}" />
+<link rel="stylesheet" href="{% static 'css/update.css' %}" />
 <h1 class="title">Update Client {{client.id_client}}</h1>
 <form action="" method="POST">
   {%csrf_token%}

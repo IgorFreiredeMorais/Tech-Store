@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Client
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 from .forms import ProductForm, ClientForm
 from django.contrib.auth.decorators import login_required
 
@@ -12,15 +13,18 @@ def home(request):
         products = Product.objects.filter(name__icontains=search)
     
     else :
-        products =  Product.objects.all()
-        
+        products_list =  Product.objects.all()
+        paginator = Paginator(products_list, 4)
+        page = request.GET.get('page')
+        products = paginator.get_page(page)
+
     return render(request, 'home.html', {'products':products})
 
-## vies do produto
+## views do produto
 @login_required
 def admin_add_products(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('list_products')
@@ -28,10 +32,14 @@ def admin_add_products(request):
         form = ProductForm()
         return render(request, 'admin/product/addProduct.html', {'form': form})
     
+def product(request, id):
+    product = Product.objects.get(pk=id)
+    return render(request, 'product/product.html', {'product': product})
+    
 @login_required
 def update_product(request, id):
     product = Product.objects.get(pk=id)
-    form = ProductForm(request.POST or None, instance=product )
+    form = ProductForm(request.POST or None,request.FILES or None, instance=product )
     if form.is_valid():
         form.save()
         return redirect ('list_products')

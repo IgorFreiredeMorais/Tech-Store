@@ -1,6 +1,6 @@
 {% extends '../../base.html' %} {% block conteudo %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/cadastroProdutosStyle.css' %}" />
-<form method="post">
+<link rel="stylesheet" href="{% static 'css/cadastro.css' %}" />
+<form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="container">
     <h1>Product Registration</h1>
@@ -49,6 +49,10 @@
           name="quantity"
           placeholder="Enter the quantity in stock the product"
         />
+      </div>
+      <div class="input-box">
+        <label for="image">Image</label>
+        <input type="file" id="image" name="image" />
       </div>
       <div class="flex">
         <button class="form-control-sm" style="margin-top: 10px" type="submit">

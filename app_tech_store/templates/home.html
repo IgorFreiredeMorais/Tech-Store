@@ -175,7 +175,7 @@
     </div>
   </section> {% endcomment %}
 
-  <section class="shop">
+  <section class="shop" id="products">
     <div class="container">
       <div class="row py-5">
         <div class="col-lg-5 m-auto text-center">
@@ -186,20 +186,37 @@
       <div class="row">
         {% for product in products %}
         <div class="col-lg-3 text-center">
+          <a href="{% url 'product_details' product.id_product %}" style="text-decoration: none;">
           <div class="card border-0 bg-light mb-2">
             <div class="card-body">
-              <img
-                src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
-                alt=""
-              />
+              <img src="{{ product.image.url }}" class="img-fluid" width="400" height="650">
             </div>
           </div>
+          </a>
           <h6>{{product.name}}</h6>
           <p>{{product.price}}</p>
         </div>
         {% endfor %}
     </div>
+    <div style="margin-bottom: 20px;display: flex;justify-content: center;">
+      {% if products%}
+      <span >
+          {% if products.has_previous %}
+              <a href="?page={{ products.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+          {% endif %}
+          
+          {% if products.paginator.num_pages %}
+          <span style=" margin-left: 5px;margin-right: 5px;">
+              {{ products.number }} de {{ products.paginator.num_pages }}
+          </span>
+          {% endif %}
+      
+          {% if products.has_next %}
+              <a href="?page={{ products.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+          {% endif %}
+      </span>
+      {% endif %}
+  </div>
   </section>
 
   <section class="apple py-5">

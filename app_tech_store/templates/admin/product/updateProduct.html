@@ -1,7 +1,7 @@
 {% extends '../../base.html' %} {% block conteudo %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/updateProduct.css' %}" />
+<link rel="stylesheet" href="{% static 'css/update.css' %}" />
 <h1 class="title">Update Product {{product.id_product}}</h1>
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
   {%csrf_token%}
 
   <div class="container">
@@ -41,6 +41,11 @@
           name="quantity"
           id="quantity"
         />
+      </div>
+      <div>Currently Image : {{product.image.url}}</div>
+      <div class="input-box">
+        <label for="image">Image</label>
+        <input type="file" id="image" name="image" />
       </div>
       <div class="flex">
         <button class="form-control-sm" style="margin-top: 10px" type="submit">
