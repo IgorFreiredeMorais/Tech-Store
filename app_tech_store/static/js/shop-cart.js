@@ -42,9 +42,9 @@ $(document).ready(function () {
     const button = event.target;
     const productInfos = button.parentElement.parentElement;
     const productImage =
-      productInfos.getElementsByClassName("product-image")[0].src;
+      productInfos.getElementsByClassName("product-img")[0].src;
     const productName =
-      productInfos.getElementsByClassName("product-title")[0].innerText;
+      productInfos.getElementsByClassName("product-name")[0].innerText;
     const productPrice =
       productInfos.getElementsByClassName("product-price")[0].innerText;
 

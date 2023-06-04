@@ -190,13 +190,14 @@
             <div class="card-body">
               <img
                 src="{% static 'images/imagem1.jpg' %}"
-                class="img-fluid"
+                class="img-fluid product-img"
                 alt=""
               />
             </div>
           </div>
-          <h6>{{product.name}}</h6>
-          <p>{{product.price}}</p>
+          <h6 class="product-name">{{product.name}}</h6>
+          <p class="product-price">{{product.price}}</p>
+          <button class="purchase-button">Comprar</button>
         </div>
         {% endfor %}
     </div>
