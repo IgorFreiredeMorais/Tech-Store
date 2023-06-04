@@ -6,19 +6,20 @@ from django.contrib.auth.decorators import login_required
 
 def home(request): 
     search = request.GET.get('search')
-    
     if search:
-        
         products = Product.objects.filter(name__icontains=search)
-    
     else :
         products =  Product.objects.all()
-        
     return render(request, 'home.html', {'products':products})
 
 def shop_cart(request):
-    
-    return render(request, 'shopCart.html')
+    cart_id = request.session.get("cart_id", None)
+    if cart_id is None:
+        print('create new cart')
+        request.session['cart_id'] = 12
+    else:
+        print("Cart ID exists")
+    return render(request, "shopCart.html", {} )
 
 ## vies do produto
 @login_required
