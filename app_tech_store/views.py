@@ -16,6 +16,10 @@ def home(request):
         
     return render(request, 'home.html', {'products':products})
 
+def shop_cart(request):
+    
+    return render(request, 'shopCart.html')
+
 ## vies do produto
 @login_required
 def admin_add_products(request):

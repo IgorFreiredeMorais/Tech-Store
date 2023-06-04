@@ -4,6 +4,7 @@ from django.contrib import admin
 
 urlpatterns = [
     path('', views.home, name="home"),
+    path('shop-cart', views.shop_cart, name="shop-cart"),
     # urls do produto
     path('admin/product/add-product', views.admin_add_products, name='add_products'),
     path('admin/product/products', views.admin_list_products, name='list_products'),
