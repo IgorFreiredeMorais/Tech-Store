@@ -5,13 +5,14 @@ from .models import Product, Client
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'description', 'price','category', 'quantity')
+        fields = ('name', 'description', 'price','category', 'quantity', 'image')
         labels = {
             'name': 'Name',
             'description':'Description',
             'price':'Price',
             'category': 'Category',
-            'quantity':'Quantity in Stock'
+            'quantity':'Quantity in Stock',
+            'image' : 'image'
         }
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),

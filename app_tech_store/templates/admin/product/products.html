@@ -1,5 +1,5 @@
 {% extends '../../base.html' %} {% block conteudo %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/products.css' %}" />
+<link rel="stylesheet" href="{% static 'css/list.css' %}" />
 <div class="container">
   <h1
     style="
@@ -20,6 +20,7 @@
         <th>Price</th>
         <th>Category</th>
         <th>Quantity in Stock</th>
+        <th>image</th>
         <th>Actions</th>
       </tr>
       {% for product in products %}
@@ -30,6 +31,7 @@
         <td>{{product.price}}</td>
         <td>{{product.category}}</td>
         <td>{{product.quantity}}</td>
+        <td>{{product.image.url}}</td>
         <td>
           <a
             href="{% url 'update-product' product.id_product %}"
