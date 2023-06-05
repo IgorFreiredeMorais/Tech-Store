@@ -24,6 +24,7 @@
     <h3>Manufacturer : {{product.manufacturer}}</h3>
     <span class="price">R${{product.price}}</span>
     <div class="options">
+      {% if user.is_authenticated %}
       <div class="amount">
         <div class="minus">
           <img src="{% static 'images/icon-minus.svg' %}" />
@@ -36,6 +37,7 @@
       <a href="" class="button"
         ><img src="{% static 'images/icon-cart.svg' %}" />Add to cart</a
       >
+      {% endif %}
     </div>
   </div>
 </div>
