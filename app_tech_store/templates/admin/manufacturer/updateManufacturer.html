@@ -1,0 +1,36 @@
+{% extends '../../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}" />
+<h1 class="title">Update Manufacturer {{manufacturer.id}}</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+  {%csrf_token%}
+
+  <div class="container">
+    <h1>Manufacturer Update</h1>
+    <div>
+      <div class="input-box">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          value="{{manufacturer.name}}"
+          name="name"
+          id="name"
+        />
+      </div>
+      <div class="input-box">
+        <label for="location">Location</label>
+        <input
+          type="text"
+          value="{{manufacturer.location}}"
+          name="location"
+          id="location"
+        />
+      </div>
+      <div class="flex">
+        <button class="form-control-sm" style="margin-top: 10px" type="submit">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</form>

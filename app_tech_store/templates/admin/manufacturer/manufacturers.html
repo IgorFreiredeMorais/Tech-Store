@@ -1,0 +1,49 @@
+{% extends '../../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}" />
+<div class="container">
+  <h1
+    style="
+      display: flex;
+      justify-content: center;
+      margin-top: 1vh;
+      margin-bottom: 2vh;
+    "
+  >
+    Manufacturers Products
+  </h1>
+  <div class="scrollable">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Actions</th>
+      </tr>
+      {% for manufacturer in manufacturers %}
+      <tr>
+        <td>{{manufacturer.id}}</td>
+        <td>{{manufacturer.name}}</td>
+        <td>{{manufacturer.location}}</td>
+        <td>
+          <a
+            href="{% url 'update-manufacturer' manufacturer.id %}"
+            style="text-decoration: none"
+          >
+            <span style="margin-right: 8px; margin-left: 8px"
+              ><i class="fas fa-edit" style="color: rgb(0, 255, 0)"></i
+            ></span>
+          </a>
+
+          <a
+            href="{% url 'delete-manufacturer' manufacturer.id %}"
+            style="text-decoration: none"
+          >
+            <span><i class="fas fa-trash icon" style="color: red"></i></span>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

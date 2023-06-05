@@ -26,12 +26,19 @@
       </div>
       <div class="input-box">
         <label for="category">Category</label>
-        <input
-          type="text"
-          value="{{product.category}}"
-          name="category"
-          id="category"
-        />
+        <select name="category" id="category">
+          {% for option in form.category.field.choices %}
+          <option value="{{ option.0 }}">{{ option.1 }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="input-box">
+        <label for="manufacturer">Manufacturer</label>
+        <select name="manufacturer" id="manufacturer">
+          {% for option in form.manufacturer.field.choices %}
+          <option value="{{ option.0 }}">{{ option.1 }}</option>
+          {% endfor %}
+        </select>
       </div>
       <div class="input-box">
         <label for="quantity">Quantity in stock</label>

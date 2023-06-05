@@ -33,13 +33,20 @@
         />
       </div>
       <div class="input-box">
-        <label for="category">Category</label>
-        <input
-          type="text"
-          id="category"
-          name="category"
-          placeholder="Enter the category product"
-        />
+        <label for="category_id">Category</label>
+        <select name="category_id" id="category_id">
+          {% for category in categorys %}
+          <option value="{{ category.id }}">{{ category.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="input-box">
+        <label for="manufacturer_id">Manufacturer</label>
+        <select name="manufacturer_id" id="manufacturer_id">
+          {% for manufacturer in manufacturers %}
+          <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+          {% endfor %}
+        </select>
       </div>
       <div class="input-box">
         <label for="quantity">Quantity in stock</label>

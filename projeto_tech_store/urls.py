@@ -6,6 +6,16 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name="home"),
+    # urls de categoria
+    path('admin/category/add-category', views.admin_add_categorys, name='add_categorys'),
+    path('admin/category/categorys', views.admin_list_categorys, name='list_categorys'),
+    path('admin/category/update_category/<int:id>', views.update_category, name='update-category'),
+    path('admin/delete_category/<int:id>', views.delete_category, name='delete-category'),
+    # urls do fabricante
+    path('admin/manufacturer/add-manufacturer', views.admin_add_manufacturers, name='add_manufacturers'),
+    path('admin/manufacturer/manufacturers', views.admin_list_manufacturers, name='list_manufacturers'),
+    path('admin/manufacturer/update_manufacturer/<int:id>', views.update_manufacturer, name='update-manufacturer'),
+    path('admin/delete_manufacturer/<int:id>', views.delete_manufacturer, name='delete-manufacturer'),
     # urls do produto
     path('admin/product/add-product', views.admin_add_products, name='add_products'),
     path('admin/product/products', views.admin_list_products, name='list_products'),
