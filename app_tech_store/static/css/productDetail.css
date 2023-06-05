@@ -22,15 +22,6 @@ body {
   align-self: flex-end;
 }
 
-.select-image {
-  max-width: 400px;
-}
-
-.select-image img {
-  width: 100%;
-  border-radius: 10px;
-}
-
 .right-side {
   width: 100%;
   margin-left: 10vh;

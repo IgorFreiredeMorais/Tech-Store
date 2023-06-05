@@ -3,35 +3,39 @@
 <div class="container">
   <div class="lef-side">
     <div class="items">
-      <div class="select-image">
-        <img src="{{ product.image.url }}" width="400" height="450" />
+      <div>
+        <img
+          src="{{ product.image.url }}"
+          style="width: 212px; border-radius: 10px"
+        />
       </div>
     </div>
   </div>
-
   <div class="right-side">
     <div class="content">
       <h6>Tech Store</h6>
       <h1>{{product.name}}</h1>
       <p>{{product.description}}</p>
-      <h3>Category : {{product.category}}</h3>
-      <h3>{{product.quantity}}</h3>
-      <h3>Manufacturer : Manufacturer</h3>
-      <span class="price">R${{product.price}}</span>
-      <div class="options">
-        <div class="amount">
-          <div class="minus">
-            <img src="{% static 'images/icon-minus.svg' %}" />
-          </div>
-          <span class="cont">0</span>
-          <div class="plus">
-            <img src="{% static 'images/icon-plus.svg' %}" />
-          </div>
+    </div>
+  </div>
+  <div class="right-side">
+    <h3>Category : {{product.category}}</h3>
+    <h3>Quantity in Stock : {{product.quantity}}</h3>
+    <h3>Manufacturer : {{product.manufacturer}}</h3>
+    <span class="price">R${{product.price}}</span>
+    <div class="options">
+      <div class="amount">
+        <div class="minus">
+          <img src="{% static 'images/icon-minus.svg' %}" />
         </div>
-        <a href="" class="button"
-          ><img src="{% static 'images/icon-cart.svg' %}" />Add to cart</a
-        >
+        <span class="cont">0</span>
+        <div class="plus">
+          <img src="{% static 'images/icon-plus.svg' %}" />
+        </div>
       </div>
+      <a href="" class="button"
+        ><img src="{% static 'images/icon-cart.svg' %}" />Add to cart</a
+      >
     </div>
   </div>
 </div>

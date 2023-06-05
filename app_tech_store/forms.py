@@ -1,7 +1,31 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Product, Client
+from .models import Product, Client, Category, Manufacturer
 
+
+class CategoryForm(ModelForm):
+    class Meta:
+        model = Category
+        fields = ('name',)
+        labels = {
+            'name': 'Name',
+        }
+        widgets = {
+            'name': forms.TextInput(attrs={'class':'form-control'}),
+        }
+
+class ManufacturerForm(ModelForm):
+    class Meta:
+        model = Manufacturer
+        fields = ('name', 'location')
+        labels = {
+            'name': 'Name',
+            'location': 'Location'
+        }
+        widgets = {
+            'name': forms.TextInput(attrs={'class':'form-control'}),
+            'location': forms.TextInput(attrs={'class':'form-control'}),
+        }
 class ProductForm(ModelForm):
     class Meta:
         model = Product

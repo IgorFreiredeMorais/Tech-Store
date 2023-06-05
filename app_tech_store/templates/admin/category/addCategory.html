@@ -1,0 +1,25 @@
+{% extends '../../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/cadastro.css' %}" />
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container">
+    <h1>Category Registration</h1>
+    <div>
+      <div class="input-box">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter category name"
+        />
+      </div>
+      <div class="flex">
+        <button class="form-control-sm" style="margin-top: 10px" type="submit">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}
