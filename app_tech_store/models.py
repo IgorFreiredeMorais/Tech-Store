@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class Category(models.Model):
     name = models.TextField(max_length=255, blank=True, null=True)
@@ -49,12 +50,9 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField()
 
     def __str__(self):
-        return f"{self.product} - {self.quantity}"
+        return f"Order from {self.order.client.name}, product : {self.product}, quantity : {self.quantity}"
     
-class Sale(models.Model):
+    def clean(self):
+        if self.quantity > self.product.quantity:
+                raise ValidationError(f"A quantidade de {self.product.name} excede o estoque disponível.")
     
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product)
-
-    def __str__(self):
-        return f"Sell ​​in the name of {self.client.name}"
