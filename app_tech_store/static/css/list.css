@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair:wght@400;500;600;700&display=swap");
 body {
+  font-family: "Playfair", serif;
   background-color: #186600 !important;
   height: 100%;
 }

@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair:wght@400;500;600;700&display=swap");
+body {
+  font-family: "Playfair", serif;
+  background-color: #186600;
+  height: 100%;
+}
 .container {
   background-color: #f2f2f2;
   border-radius: 5px;
@@ -14,11 +19,6 @@
 }
 h1 {
   font-family: "Playfair", serif;
-}
-
-body {
-  background-color: #593e3e;
-  height: 100%;
 }
 
 label {
