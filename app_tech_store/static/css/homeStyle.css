@@ -120,3 +120,8 @@ h1 {
   padding-right: 5px;
   font-family: "Playfair", serif;
 }
+
+.teste h6 {
+  font-family: "Playfair", serif;
+  font-size: 25px !important;
+}
