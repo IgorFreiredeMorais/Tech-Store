@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair:wght@400;500;600;700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Playfair", serif;
 }
 
 .main {
@@ -17,7 +15,6 @@
 .main h1 {
   font-size: 4rem;
   font-weight: 700;
-  font-family: "Playfair", serif !important;
 }
 
 .btn-main {
@@ -50,7 +47,6 @@ h1 {
   color: white;
   font-weight: 700;
   border-radius: 60px;
-  font-family: "Playfair", serif;
 }
 
 .btn1:hover {
@@ -73,14 +69,9 @@ h1 {
   width: 100%;
 }
 
-.apple h1 {
-  font-family: "Playfair", serif;
-}
-
 .news {
   background-color: black;
   color: white;
-  font-family: "Playfair", serif;
 }
 
 .btn2 {
@@ -90,7 +81,6 @@ h1 {
   margin-left: -10px;
   border: 2px solid white;
   font-weight: 600;
-  font-family: "Playfair", serif;
 }
 
 .news input {
@@ -102,7 +92,6 @@ h1 {
   color: white;
   margin-top: 20px;
   font-weight: 600;
-  font-family: "Playfair", serif;
 }
 
 .news::placeholder {
@@ -111,17 +100,14 @@ h1 {
 
 .news p {
   margin: 0;
-  font-family: "Playfair", serif;
 }
 
 .fab {
   font-size: 2.5rem;
   cursor: pointer;
   padding-right: 5px;
-  font-family: "Playfair", serif;
 }
 
 .teste h6 {
-  font-family: "Playfair", serif;
   font-size: 25px !important;
 }

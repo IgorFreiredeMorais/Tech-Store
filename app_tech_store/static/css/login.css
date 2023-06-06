@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair:wght@400;500;600;700&display=swap");
 body {
-  font-family: "Playfair", serif;
   background-color: #186600;
   height: 100%;
 }
@@ -18,12 +16,10 @@ body {
   margin-top: 27vh;
 }
 h1 {
-  font-family: "Playfair", serif;
 }
 
 label {
   font-weight: bold;
-  font-family: "Playfair", serif;
   font-size: 20px;
 }
 
@@ -42,9 +38,8 @@ button:hover {
 }
 
 .register {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
-  font-family: "Playfair", serif;
   margin-top: 3vh;
 }
 

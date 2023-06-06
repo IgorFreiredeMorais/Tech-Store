@@ -1,14 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair:wght@400;500;600;700&display=swap");
-body {
-  font-family: "Playfair", serif;
-}
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: calc(100vh - 85px);
-  gap: 100px;
+  height: 75vh;
 }
 body {
   height: 100%;
@@ -32,33 +26,28 @@ body {
 
 .right-side h6 {
   color: white;
-  font-family: "Playfair", serif;
   font-size: 30px;
 }
 
 .right-side h1 {
   color: white;
-  font-family: "Playfair", serif;
-  font-size: 50px;
+  font-size: 2rem;
 }
 
 .right-side h3 {
   color: white;
-  font-family: "Playfair", serif;
   font-size: 30px;
   font-weight: 400;
 }
 
 .right-side p {
   color: white;
-  font-family: "Playfair", serif;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .price {
   color: white;
   font-size: 20px;
-  font-family: "Playfair", serif;
   font-weight: 700;
 }
 
@@ -73,18 +62,15 @@ body {
 }
 
 .cont {
-  font-family: "Playfair", serif;
   font-size: 25px;
   color: white;
 }
 .minus,
 .plus {
   cursor: pointer;
-  font-family: "Playfair", serif;
 }
 .button {
   display: inline-block;
-  font-family: "Playfair", serif;
   text-decoration: none;
   color: #fff;
   background-color: black;

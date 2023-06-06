@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair:wght@400;500;600;700&display=swap");
-body {
-  font-family: "Playfair", serif;
-}
 .container {
   background-color: #f2f2f2;
   border-radius: 5px;
@@ -15,12 +11,8 @@ body {
   flex-direction: column;
   margin-top: 12vh;
 }
-h1 {
-  font-family: "Playfair", serif;
-}
 label {
   font-weight: bold;
-  font-family: "Playfair", serif;
 }
 body {
   background-color: #186600 !important;
