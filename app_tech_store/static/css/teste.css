@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Playfair", serif;
+}
+
+.teste p {
+  font-size: 22px;
+}
+.teste h6 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.copy {
+  font-size: 30px;
+}
