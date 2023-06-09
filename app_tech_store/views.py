@@ -15,7 +15,7 @@ def home(request):
     
     else :
         products_list =  Product.objects.all()
-        paginator = Paginator(products_list, 4)
+        paginator = Paginator(products_list, 8)
         page = request.GET.get('page')
         products = paginator.get_page(page)
 

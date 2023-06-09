@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.shop {
+  background-color: #ffff;
+  height: 93vh;
+}
+
 .main {
   background: #879693;
   background-size: cover;
