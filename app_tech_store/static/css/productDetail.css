@@ -1,53 +1,31 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 75vh;
-}
-body {
-  height: 100%;
-  background-color: #186600 !important;
-}
-
-.left-side {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .items {
   align-self: flex-end;
 }
 
-.right-side {
-  width: 100%;
-  margin-left: 10vh;
-}
-
 .right-side h6 {
-  color: white;
+  color: black;
   font-size: 30px;
 }
 
 .right-side h1 {
-  color: white;
+  color: black;
   font-size: 2rem;
 }
 
 .right-side h3 {
-  color: white;
+  color: black;
   font-size: 30px;
   font-weight: 400;
 }
 
 .right-side p {
-  color: white;
+  color: black;
   font-size: 1rem;
   margin-top: 2rem;
 }
 
 .price {
-  color: white;
+  color: black;
   font-size: 20px;
   font-weight: 700;
 }
@@ -64,7 +42,7 @@ body {
 
 .cont {
   font-size: 25px;
-  color: white;
+  color: black;
 }
 .minus,
 .plus {
@@ -85,7 +63,7 @@ body {
   font-weight: 700;
 }
 .button:hover {
-  color: white;
+  color: black;
 }
 .button img {
   font-size: 22px;

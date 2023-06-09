@@ -1,43 +1,52 @@
 {% extends '../base.html' %} {% block conteudo %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/productDetail.css' %}" />
-<div class="container">
-  <div class="lef-side">
-    <div class="items">
-      <div>
-        <img
-          src="{{ product.image.url }}"
-          style="width: 212px; border-radius: 10px"
-        />
+<section class="product-detail">
+  <div
+    class="container d-flex flex-column justify-content-center align-items-center"
+    style="height: 92vh"
+  >
+    <div
+      class="d-flex row w-100 py-lg-5"
+      style="background-color: #d1cece; border-radius: 1rem"
+    >
+      <div class="d-flex justify-content-center align-items-center row">
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+          <div class="items">
+            <div style="background-color: #ffff; border-radius: 1rem">
+              <img src="{{ product.image.url }}" width="320" height="400" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content">
+            <h1 style="height: 50px" class="mb-4">{{product.name}}</h1>
+            <p style="height: 100px">{{product.description}}</p>
+          </div>
+          <div>
+            <h3>Category : {{product.category}}</h3>
+            <h3>Quantity in Stock : {{product.quantity}}</h3>
+            <h3>Manufacturer : {{product.manufacturer}}</h3>
+            <span class="price">R${{product.price}}</span>
+          </div>
+          <div class="options">
+            {% if user.is_authenticated %}
+            <div class="amount">
+              <div class="minus">
+                <img src="{% static 'images/icon-minus.svg' %}" />
+              </div>
+              <span class="cont">0</span>
+              <div class="plus">
+                <img src="{% static 'images/icon-plus.svg' %}" />
+              </div>
+            </div>
+            <a href="" class="button"
+              ><img src="{% static 'images/icon-cart.svg' %}" />Add to cart</a
+            >
+            {% endif %}
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="right-side">
-    <div class="content">
-      <h1 style="height: 50px" class="mb-4">{{product.name}}</h1>
-      <p style="height: 200px">{{product.description}}</p>
-    </div>
-  </div>
-  <div class="right-side">
-    <h3>Category : {{product.category}}</h3>
-    <h3>Quantity in Stock : {{product.quantity}}</h3>
-    <h3>Manufacturer : {{product.manufacturer}}</h3>
-    <span class="price">R${{product.price}}</span>
-    <div class="options">
-      {% if user.is_authenticated %}
-      <div class="amount">
-        <div class="minus">
-          <img src="{% static 'images/icon-minus.svg' %}" />
-        </div>
-        <span class="cont">0</span>
-        <div class="plus">
-          <img src="{% static 'images/icon-plus.svg' %}" />
-        </div>
-      </div>
-      <a href="" class="button"
-        ><img src="{% static 'images/icon-cart.svg' %}" />Add to cart</a
-      >
-      {% endif %}
-    </div>
-  </div>
-</div>
+</section>
 {% endblock %}
