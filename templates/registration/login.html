@@ -1,20 +1,25 @@
 {% extends 'base.html' %} {% block conteudo %}{% load static %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}" />
 <section>
-  <div class="container d-flex align-items-center justify-content-center">
-    <form method="post">
-      {% csrf_token %}
-      <div class="container">
-        <h1>Sign Tech Store</h1>
-        <input type="hidden" name="next" value="{{ next }}" />
-        {{ form}}
-        <button>Sign</button>
-        <p class="register">
-          Want to create an account?
-          <a class="link" href="/accounts/register">Click here</a>
-        </p>
-      </div>
-    </form>
+  <div
+    class="container d-flex flex-column justify-content-center align-items-center"
+    style="height: 92vh"
+  >
+    <div class="container d-flex align-items-center justify-content-center">
+      <form method="post">
+        {% csrf_token %}
+        <div class="container">
+          <h1>Sign Tech Store</h1>
+          <input type="hidden" name="next" value="{{ next }}" />
+          {{ form}}
+          <button>Sign</button>
+          <p class="register">
+            Want to create an account?
+            <a class="link" href="/accounts/register">Click here</a>
+          </p>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
